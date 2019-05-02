@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body
+{
+font-size:70%;
+font-family:verdana,helvetica,arial,sans-serif;
+}
+</style>
+<script>
+function cnvs_getCoordinates(e)
+{
+x=e.clientX;
+y=e.clientY;
+document.getElementById("xycoordinates").innerHTML="Coordinates: (" + x + "," + y + ")";
+}
+function cnvs_getCoordinatess(e)
+{
+x=e.clientX;
+y=e.clientY;
+document.getElementById("xA").value=x;
+document.getElementById("yA").value=y;
+document.getElementById("dot").style.top = y-4+'px';
+document.getElementById("dot").style.left = x-4+'px';
+}
+
+function cnvs_clearCoordinates()
+{
+//document.getElementById("xycoordinates").innerHTML="";
+}
+</script>
+</head>
+<body style="margin:0px;">
+
+<div id="coordiv" style="float:left;width:800px;height:400px;border:1px solid #c3c3c3; margin:50px;"
+onmousemove="cnvs_getCoordinates(event)" onclick="cnvs_getCoordinatess(event)" onmouseout="cnvs_clearCoordinates()"></div>
+<div style="position:absolute; width:9px; height:9px; background:#333; top:50px; left:50px" id="dot"></div>
+<br>
+<br>
+<br>
+<div id="xycoordinates">Coordinates: </div><br>
+<input type="text" id="xA"><br>
+<input type="text" id="yA">
+
+</body>
+</html>
